@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Quirós | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #3b82f6;
+            }
+            to {
+                box-shadow: 0 0 20px #8b5cf6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold gradient-text">Dev Mauricio.</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Home</a>
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">About</a>
+                        <a href="#skills" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Skills</a>
+                        <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Projects</a>
+                        <a href="#education" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Education</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md hover:text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://wallup.net/wp-content/uploads/2017/11/23/423454-rocket-Launch-minimalism-material_minimal-universe.jpg');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center fade-in">
+            <div class="floating mb-8">
+                <img src="https://cdn.qwenlm.ai/output/8bb82923-83ac-4e52-a336-fe38a3ba2654/t2i/4ef46314-6c5a-42cd-b72c-ef7d372a813b/621ea110-7f1a-4ea0-a2a7-d69e710b6cf5.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiOGJiODI5MjMtODNhYy00ZTUyLWEzMzYtZmUzOGEzYmEyNjU0IiwicmVzb3VyY2VfaWQiOiI2MjFlYTExMC03ZjFhLTRlYTAtYTJhNy1kNjllNzEwYjZjZjUiLCJyZXNvdXJjZV9jaGF0X2lkIjpudWxsfQ.F3iv_pVa8GHV6cKhzNIaFH5xnG_X7UEzMjMczNLVKaw" alt="Profile" class="mx-auto rounded-full border-4 border-blue-500 glow w-[200px] h-[200px] object-cover">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Mauricio A. Quirós Suárez</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 gradient-text">Developer</h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+                "Programmer passionate about developing innovative technological solutions. Always willing to learn and share knowledge."
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#projects" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-medium transition transform hover:scale-105">View Projects</a>
+                <a href="#contact" class="px-6 py-3 border border-blue-400 hover:bg-blue-900/30 rounded-md font-medium transition transform hover:scale-105">Contact Me</a>
+            </div>
+            <div class="mt-12 animate-bounce">
+                <a href="#about" class="text-blue-400">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6">
+                        "I am an active and charismatic programmer who is passionate about new developments and experiences for learning and improving people's experience. I use technology to help and solve their needs. I am always willing to learn new technologies and share my knowledge with others."
+                    </p>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-blue-400">Professional Interests:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-code text-blue-400 mr-2"></i>
+                                <span>Software development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-user-cog text-blue-400 mr-2"></i>
+                                <span>User experience improvement</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-users text-blue-400 mr-2"></i>
+                                <span>Teamwork and leadership</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Quick Facts</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-600 p-4 rounded-lg text-center">
+                            <i class="fas fa-graduation-cap text-3xl mb-2 text-blue-400"></i>
+                            <p>Computer Science Student</p>
+                        </div>
+                        <div class="bg-gray-600 p-4 rounded-lg text-center">
+                            <i class="fas fa-certificate text-3xl mb-2 text-blue-400"></i>
+                            <p>4 Certifications</p>
+                        </div>
+                        <div class="bg-gray-600 p-4 rounded-lg text-center">
+                            <i class="fas fa-project-diagram text-3xl mb-2 text-blue-400"></i>
+                            <p>5+ Projects</p>
+                        </div>
+                        <div class="bg-gray-600 p-4 rounded-lg text-center">
+                            <i class="fas fa-language text-3xl mb-2 text-blue-400"></i>
+                            <p>Bilingual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1743125612767-0f54571fb1fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400 flex items-center">
+                        <i class="fas fa-code mr-2"></i> Programming Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Java">
+                            <i class="fab fa-java text-2xl text-orange-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="C#">
+                            <i class="fas fa-copyright text-2xl text-purple-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="HTML">
+                            <i class="fab fa-html5 text-2xl text-orange-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="CSS">
+                            <i class="fab fa-css3-alt text-2xl text-blue-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Python">
+                            <i class="fab fa-python text-2xl text-blue-400"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400 flex items-center">
+                        <i class="fas fa-cubes mr-2"></i> Frameworks
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title=".NET">
+                            <i class="fas fa-dot-circle text-2xl text-purple-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Django">
+                            <i class="fab fa-python text-2xl text-green-500"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Development Tools -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400 flex items-center">
+                        <i class="fas fa-tools mr-2"></i> Development Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Git">
+                            <i class="fab fa-git-alt text-2xl text-orange-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="GitHub">
+                            <i class="fab fa-github text-2xl text-gray-300"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="GitLab">
+                            <i class="fab fa-gitlab text-2xl text-orange-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="VS Code">
+                            <i class="fas fa-code text-2xl text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Skills -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover col-span-1 md:col-span-3">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400 flex items-center">
+                        <i class="fas fa-star mr-2"></i> Other Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Office">
+                            <i class="fas fa-file-word text-2xl text-blue-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Agile">
+                            <i class="fas fa-project-diagram text-2xl text-green-500"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="Azure">
+                            <i class="fab fa-microsoft text-2xl text-blue-400"></i>
+                        </div>
+                        <div class="tech-icon bg-gray-700 p-3 rounded-full" title="VBA">
+                            <i class="fas fa-file-excel text-2xl text-green-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Student API with ASP.NET Core</h3>
+                        <p class="text-gray-300 mb-4">
+                            API developed in ASP.NET Core to manage student information. Implemented in Azure cloud.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">ASP.NET Core</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Azure</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">API</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Student Enrollment Management System</h3>
+                        <p class="text-gray-300 mb-4">
+                            Basic application to manage student enrollments. Consumes an API hosted in Azure cloud.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">.NET</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Azure</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Desktop App</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">ATM Simulator in Java</h3>
+                        <p class="text-gray-300 mb-4">
+                            ATM simulator developed in Java. Allows basic operations such as withdrawals and balance inquiries.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Java</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">OOP</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Console App</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Parking Control System</h3>
+                        <p class="text-gray-300 mb-4">
+                            System developed in Java that uses sockets and multithreading to manage vehicle access and exit in a parking lot.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Java</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Sockets</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Multithreading</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover md:col-span-2">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Inventory Manager with Excel VBA Interface</h3>
+                        <p class="text-gray-300 mb-4">
+                            Inventory management tool with Excel interface. Developed using VBA to automate processes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">VBA</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Excel</span>
+                            <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">Automation</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-gray-900 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1521999693742-4717d76f97cc?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Education & Certifications</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-blue-400 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap mr-2"></i> Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium">Bachelor in Business Informatics</h4>
+                            <p class="text-gray-400 text-sm">University of Costa Rica (In progress)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">High School Diploma</h4>
+                            <p class="text-gray-400 text-sm">Liceo de Bebedero</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-blue-400 flex items-center justify-center">
+                        <i class="fas fa-certificate mr-2"></i> Certifications
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+                                <i class="fas fa-laptop-code text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Python Essentials 1</h4>
+                                <p class="text-gray-400 text-sm">Cisco Networking Academy</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+                                <i class="fas fa-language text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Basic Conversational English</h4>
+                                <p class="text-gray-400 text-sm">IPEC de Bebedero</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+                                <i class="fas fa-users text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Youth Leadership</h4>
+                                <p class="text-gray-400 text-sm">Fundación Omar Dengo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/20 p-2 rounded-full mr-3">
+                                <i class="fas fa-user-shield text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Self-Leadership</h4>
+                                <p class="text-gray-400 text-sm">UCR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-500/20 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <a href="mailto:mquirossuarez6@gmail.com" class="text-white hover:text-blue-400 transition">mquirossuarez6@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-500/20 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone</p>
+                                <a href="tel:+50685827155" class="text-white hover:text-blue-400 transition">+506 8582-7155</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4 text-blue-400">Connect With Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 p-3 rounded-full transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-400 p-3 rounded-full transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-blue-400">Send Me a Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-medium transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold gradient-text">Dev Mauricio.</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-blue-400 transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-blue-400 transition">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-blue-400 transition">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-blue-400 transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-blue-400 transition">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>© 2025 Mauricio A. Quirós Suárez. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fade-in animation when scrolling
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            for (let i = 0; i < fadeElements.length; i++) {
+                const elem = fadeElements[i];
+                const distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
+                
+                if (distInView < 0) {
+                    elem.classList.add('fade-in');
+                }
+            }
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
